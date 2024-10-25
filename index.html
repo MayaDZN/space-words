@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Craft: Educational Platformer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="game-container">
+      <canvas id="game-canvas"></canvas>
+      <div id="hud">
+        <div id="score">Score: <span id="score-value">0</span></div>
+        <div id="lives">Lives: <span id="lives-value">5</span></div>
+        <div id="word-progress">Word: <span id="word-value"></span></div>
+      </div>
+    </div>
+    <div id="start-screen" class="screen">
+      <h1>Space Craft</h1>
+      <button id="start-button">Launch Mission</button>
+      <button id="settings-button">Control Panel</button>
+    </div>
+    <div id="settings-screen" class="screen hidden">
+      <h2>Control Panel</h2>
+      <div class="setting">
+        <label for="volume">Comms Volume:</label>
+        <input type="range" id="volume" min="0" max="100" value="50" />
+      </div>
+      <div class="setting">
+        <label for="difficulty">Mission Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Cadet</option>
+          <option value="medium">Officer</option>
+          <option value="hard">Commander</option>
+        </select>
+      </div>
+      <button id="save-settings">Confirm & Close</button>
+    </div>
+    <div id="game-over-screen" class="screen hidden">
+      <h2>Mission Over</h2>
+      <p>Final Score: <span id="final-score"></span></p>
+      <button id="restart-button">New Mission</button>
+      <button id="settings-button-gameover">Control Panel</button>
+    </div>
+    <audio id="background-music" loop>
+      <source src="assets/space-ambience.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="game.js"></script>
+  </body>
+</html>
